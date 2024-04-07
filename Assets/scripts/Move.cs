@@ -2,18 +2,7 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    [SerializeField] private float _moveSpeed;
-    [SerializeField] private float _rotateSpeed;
-
-    private static int s_negativeOne = -1;
-
-    private void CheckSpeedNegative()
-    {
-        if (_moveSpeed < 0)
-        {
-            _moveSpeed = _moveSpeed * s_negativeOne;
-        }
-    }
+    [SerializeField] [Range(0,1000)] private float _moveSpeed;
 
     private void MoveThisObject()
     {
@@ -24,7 +13,6 @@ public class Move : MonoBehaviour
 
     private void Update()
     {
-        CheckSpeedNegative();
         MoveThisObject();
     }
 }

@@ -7,17 +7,7 @@ public class MoveOnlyX : MonoBehaviour
     private bool _isEnd;
 
     [SerializeField] private float _direction;
-    [SerializeField] private float _speed;
-
-    private static int s_negativeOne = -1;
-
-    private void CheckSpeedNegative()
-    {
-        if (_speed < 0)
-        {
-            _speed = _speed * s_negativeOne;
-        }
-    }
+    [SerializeField] [Range(0, 1000)] private float _speed;
 
     private void MoveThisObject()
     {
@@ -43,7 +33,6 @@ public class MoveOnlyX : MonoBehaviour
 
     private void Update()
     {
-        CheckSpeedNegative();
         MoveThisObject();
     }
 }

@@ -2,27 +2,12 @@ using UnityEngine;
 
 public class Scales : MonoBehaviour
 {
-    [SerializeField] private float _speed;
-    [SerializeField] private float _maxScale;
-
-    private static int s_negativeOne = -1;
+    [SerializeField] [Range(0, 1000)] private float _speed;
+    [SerializeField] [Range(1, 1000)] private float _maxScale;
 
     private bool _isBigger;
 
     private Vector3 _scale;
-
-    private void CheckNegativeEquls()
-    {
-        if (_speed < 0)
-        {
-            _speed *= s_negativeOne;
-        }
-
-        if (_maxScale < 1)
-        {
-            _maxScale *= s_negativeOne;
-        }
-    }
 
     private void TryScale()
     {
@@ -46,7 +31,6 @@ public class Scales : MonoBehaviour
 
     private void Update()
     {
-        CheckNegativeEquls();
         TryScale();
     }
 }

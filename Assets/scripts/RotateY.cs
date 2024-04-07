@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class RotateY : MonoBehaviour
 {
-    [SerializeField] private float _speed;
+    [SerializeField] [Range(0, 1000)] private float _speed;
 
     private void Update()
     {
